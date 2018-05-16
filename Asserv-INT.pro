@@ -28,12 +28,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         sources/main.cpp \
         sources/mainwindow.cpp \
-    sources/serialconnectionwindow.cpp
+    sources/serialconnectionwindow.cpp \
+    sources/terminal.cpp
 
 HEADERS += \
         headers/mainwindow.h \
-    headers/serialconnectionwindow.h
+    headers/serialconnectionwindow.h \
+    headers/serialportconfig.h \
+    headers/utils.h \
+    headers/terminal.h
 
 FORMS += \
         ui/mainwindow.ui \
-    ui/serialconnection.ui
+    ui/serialconnection.ui \
+    ui/terminal.ui

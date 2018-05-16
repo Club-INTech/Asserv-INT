@@ -32,6 +32,8 @@ class Ui_MainWindow
 public:
     QAction *actionConnectSerial;
     QAction *actionDisconnect;
+    QAction *actionClose;
+    QAction *actionOpenTerminal;
     QWidget *centralWidget;
     QGridLayout *gridLayout_2;
     QGroupBox *groupBox;
@@ -42,6 +44,7 @@ public:
     QWidget *tab_3;
     QMenuBar *menuBar;
     QMenu *menuMenu;
+    QMenu *menuAbout;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -55,6 +58,11 @@ public:
         actionDisconnect = new QAction(MainWindow);
         actionDisconnect->setObjectName(QStringLiteral("actionDisconnect"));
         actionDisconnect->setEnabled(false);
+        actionClose = new QAction(MainWindow);
+        actionClose->setObjectName(QStringLiteral("actionClose"));
+        actionOpenTerminal = new QAction(MainWindow);
+        actionOpenTerminal->setObjectName(QStringLiteral("actionOpenTerminal"));
+        actionOpenTerminal->setEnabled(false);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout_2 = new QGridLayout(centralWidget);
@@ -93,6 +101,8 @@ public:
         menuBar->setGeometry(QRect(0, 0, 497, 19));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QStringLiteral("menuMenu"));
+        menuAbout = new QMenu(menuBar);
+        menuAbout->setObjectName(QStringLiteral("menuAbout"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -102,8 +112,11 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuMenu->menuAction());
+        menuBar->addAction(menuAbout->menuAction());
         menuMenu->addAction(actionConnectSerial);
         menuMenu->addAction(actionDisconnect);
+        menuMenu->addAction(actionOpenTerminal);
+        menuMenu->addAction(actionClose);
 
         retranslateUi(MainWindow);
 
@@ -118,11 +131,14 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         actionConnectSerial->setText(QApplication::translate("MainWindow", "Connect", nullptr));
         actionDisconnect->setText(QApplication::translate("MainWindow", "Disconnect", nullptr));
+        actionClose->setText(QApplication::translate("MainWindow", "Close", nullptr));
+        actionOpenTerminal->setText(QApplication::translate("MainWindow", "Open terminal", nullptr));
         groupBox->setTitle(QApplication::translate("MainWindow", "GroupBox", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "Speed", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Translation", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Rotation", nullptr));
         menuMenu->setTitle(QApplication::translate("MainWindow", "Menu", nullptr));
+        menuAbout->setTitle(QApplication::translate("MainWindow", "About", nullptr));
     } // retranslateUi
 
 };
